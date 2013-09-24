@@ -1,0 +1,18 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+zh-CN:
+ spree:
+   address_book:
+    other_address: "使用新地址"
+    add_new_shipping_address: "增加新配送地址"
+    new_shipping_address: "新配送地址"
+    edit_shipping_address: "编辑配送地址"
+    no_shipping_addresses_on_file: "没有配送地址"
+    shipping_addresses: "配送地址"
+    successfully_saved: "保存成功"
+    unsuccessfully_saved: "保存地址失败."
+    successfully_updated: "修改成功"
+    unsuccessfully_updated: "修改失败."
+    save: "保存"
+    address: "地址"

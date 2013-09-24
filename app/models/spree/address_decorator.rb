@@ -23,14 +23,21 @@ Spree::Address.class_eval do
   def can_be_deleted?
     shipments.empty? && Spree::Order.where("bill_address_id = ? OR ship_address_id = ?", self.id, self.id).count == 0
   end
-
-  def to_s
+  def to_old_s
     [
       "#{firstname} #{lastname}",
       "#{address1}",
       "#{address2}",
       "#{city}, #{state || state_name} #{zipcode}",
       "#{country}"
+    ].reject(&:empty?).join("<br/>").html_safe
+  end
+
+  def to_s
+    [
+      "#{Spree.t(:owner_name)} : #{firstname}",
+      "#{Spree.t(:bill_address)} : #{country}#{state || state_name} #{city} #{address1}, #{zipcode}",
+      "#{Spree.t(:owner_phone)} : #{phone}"
     ].reject(&:empty?).join("<br/>").html_safe
   end
 
